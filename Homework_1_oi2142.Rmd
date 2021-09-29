@@ -1,0 +1,39 @@
+---
+title: "oi2142_Homework1"
+output: github_document
+---
+
+## Attaching packages
+```{r setup}
+library(tidyverse)
+```
+
+## Problem 1: 
+Creating a data  frame using Tibble
+
+    
+```{r dataframe_tibble, echo=FALSE}
+  homework1_df = tibble (
+    vec_numeric = rnorm(10)
+,    vec_char = c("Wendy", "Kevin", "Fred", "Jeff", "Leslie", "Jen", "Michelle", "Emily", "Jake", "Sam"),
+    vec_logical = c("TRUE", "TRUE", "TRUE", "FALSE", "TRUE", "TRUE", "TRUE", "FALSE", "TRUE", "TRUE"),
+    vec_factor = factor (c("work", "home", "mobile", "work", "home", "mobile", "work", "home", "mobile", "home")))
+```
+
+
+```{r, echo=FALSE}
+homework1_df
+```
+
+## Pull function - taking the mean 
+
+Taking the mean for var = vec_numeric
+
+```{r means}
+mean(pull (homework1_df, var = vec_numeric))
+mean(pull(homework1_df, var = vec_char))
+mean(pull(homework1_df, var = vec_logical))
+mean(pull(homework1_df, var = vec_factor))
+```
+
+
